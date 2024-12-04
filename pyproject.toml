@@ -1,0 +1,31 @@
+[project]
+name = "stl2cad"
+version = "0.1.0"
+description = "Convert STL to CAD formats."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.urls]
+"Homepage" = "https://github.com/kieran-mackle/stl2cad"
+"Bug Tracker" = "https://github.com/kieran-mackle/stl2cad/issues"
+
+[project.optional-dependencies]
+dev = [
+    "ruff >= 0.7.4",
+    "commitizen >= 3.31.0",
+    "pre-commit >= 3.4.0",
+]
+
+[project.scripts]
+stl2cad = "stl2cad.hello:main"
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+version = "0.1.0"
+tag_format = "v$version"
+version_provider = "pep621"
+version_files = [
+    "pyproject.toml:^version",
+]
+update_changelog_on_bump = true

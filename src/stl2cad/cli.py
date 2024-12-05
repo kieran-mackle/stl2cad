@@ -25,7 +25,16 @@ from stl2cad import utilities
     type=click.BOOL,
     is_flag=True,
 )
-def main(infile: str, outfile: str, cadfile: bool):
+@click.option(
+    "--verbose",
+    "-v",
+    help="Be verbose.",
+    default=False,
+    show_default=True,
+    type=click.BOOL,
+    is_flag=True,
+)
+def main(infile: str, outfile: str, cadfile: bool, verbose: bool):
     # Get base filename
     filename = os.path.basename(os.path.abspath(infile))
 
@@ -35,4 +44,4 @@ def main(infile: str, outfile: str, cadfile: bool):
         outfile = f"{''.join(filename.split('.')[:-1])}.step"
 
     # Workflow
-    utilities.convert(infile, outfile, cadfile)
+    utilities.convert(infile, outfile, cadfile, verbose)

@@ -9,3 +9,8 @@ wheels/
 # Virtual environments
 .venv
 .vscode
+
+# Output files
+*.iges
+*.step
+*.FCStd

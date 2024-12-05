@@ -4,7 +4,9 @@ version = "0.1.0"
 description = "Convert STL to CAD formats."
 readme = "README.md"
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+  'click',
+]
 
 [project.urls]
 "Homepage" = "https://github.com/kieran-mackle/stl2cad"
@@ -18,7 +20,7 @@ dev = [
 ]
 
 [project.scripts]
-stl2cad = "stl2cad.hello:main"
+stl2cad = "stl2cad.cli:main"
 
 [tool.commitizen]
 name = "cz_conventional_commits"

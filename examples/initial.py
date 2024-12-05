@@ -22,6 +22,6 @@ solid = make_solid(shape)
 refined = refine_shape(solid)
 
 # Export and save
-export_object(refined, step_path, file_type="STEP")
-export_object(refined, iges_path, file_type="IGES")
+export_object(refined, step_path)
+export_object(refined, iges_path)
 save_document(fcstd_path)

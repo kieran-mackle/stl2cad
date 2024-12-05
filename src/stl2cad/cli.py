@@ -35,14 +35,4 @@ def main(infile: str, outfile: str, cadfile: bool):
         outfile = f"{''.join(filename.split('.')[:-1])}.step"
 
     # Workflow
-    doc = utilities.create_new_document()  # noqa: F841
-    mesh = utilities.import_stl(infile)
-    shape = utilities.shape_from_mesh(mesh)
-    solid = utilities.make_solid(shape)
-    refined = utilities.refine_shape(solid)
-
-    # Export and save
-    utilities.export_object(refined, outfile)
-    if cadfile:
-        fcstd_path = f"{''.join(filename.split('.')[:-1])}.FCStd"
-        utilities.save_document(fcstd_path)
+    utilities.convert(infile, outfile, cadfile)

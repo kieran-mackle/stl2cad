@@ -1,3 +1,4 @@
+import os
 import FreeCAD as App
 import Part
 import Mesh
@@ -65,3 +66,19 @@ def export_object(obj, file_path: str):
 def save_document(file_path: str):
     """Save the FreeCAD document."""
     App.ActiveDocument.saveAs(file_path)
+
+
+def convert(infile: str, outfile: str, cadfile: bool = False):
+    # Workflow
+    doc = create_new_document()  # noqa: F841
+    mesh = import_stl(infile)
+    shape = shape_from_mesh(mesh)
+    solid = make_solid(shape)
+    refined = refine_shape(solid)
+
+    # Save new file
+    export_object(refined, outfile)
+    if cadfile:
+        filename = os.path.basename(os.path.abspath(infile))
+        fcstd_path = f"{''.join(filename.split('.')[:-1])}.FCStd"
+        save_document(fcstd_path)

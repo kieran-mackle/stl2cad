@@ -2,6 +2,9 @@
 
 A lightweight utility to convert STL files into CAD formats.
 
+```
+stl2cad geometry.stl -o geometry.step
+```
 
 ## Dependencies
 The `stl2cad` package depends on [FreeCAD](https://www.freecad.org/), which can be downloaded 
@@ -25,3 +28,4 @@ chmod -v +x ~/Downloads/FreeCAD_*.AppImage
 - clarify and test example install script (need to add to path)
 - add better examples
 - add tests
+- allow saving multiple formats in one go (more efficient)

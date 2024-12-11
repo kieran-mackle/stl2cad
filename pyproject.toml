@@ -1,6 +1,6 @@
 [project]
 name = "stl2cad"
-version = "0.1.0"
+version = "0.2.0"
 description = "Convert STL to CAD formats."
 readme = "README.md"
 requires-python = ">=3.11"
@@ -24,7 +24,7 @@ stl2cad = "stl2cad.cli:main"
 
 [tool.commitizen]
 name = "cz_conventional_commits"
-version = "0.1.0"
+version = "0.2.0"
 tag_format = "v$version"
 version_provider = "pep621"
 version_files = [
